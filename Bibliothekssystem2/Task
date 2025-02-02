@@ -1,0 +1,82 @@
+Silvesterprojekt Programmierung mit Java – Zusammenfassung der Aufgabe
+
+Ziel der Aufgabe:
+Erstelle eine Java-Anwendung, die ein Bibliothekssystem, ein Adressbuch und einen Aufgaben-Manager umfasst. Die Anwendung soll Datenmodellierung, ArrayLists, Serialisierung, Textmenüs und einen Excel-Export beinhalten.
+Anforderungen:
+1. Datenmodellierung:
+
+Erstelle für jedes System eine Klasse mit den folgenden Attributen:
+
+    Bibliothekssystem (Buch):
+        titel (String)
+        autor (String)
+        isbn (String)
+        verfügbar (boolean)
+
+    Adressbuch (Kontakt):
+        name (String)
+        telefonnummer (String)
+        email (String)
+        adresse (String)
+
+    Aufgaben-Manager (Aufgabe):
+        beschreibung (String)
+        priorität (String)
+        fälligkeitsdatum (String)
+        status (String)
+
+2. Speicherung mit ArrayList:
+
+Erstelle für jedes System eine ArrayList zum Speichern der Objekte:
+
+    Bibliothekssystem: ArrayList<Buch>
+    Adressbuch: ArrayList<Kontakt>
+    Aufgaben-Manager: ArrayList<Aufgabe>
+
+3. Serialisierung:
+
+    Implementiere Methoden, um die Daten in einer Datei zu speichern und später wieder zu laden. Verwende dazu Java-Serialisierung (ObjectOutputStream und ObjectInputStream).
+
+4. Textbasiertes Menü:
+
+Erstelle ein textbasiertes Menü, das folgende Funktionen bietet:
+
+    Bibliothekssystem:
+        Buch hinzufügen
+        Alle Bücher anzeigen
+        Bücherliste speichern
+        Bücherliste laden
+    Adressbuch:
+        Kontakt hinzufügen
+        Alle Kontakte anzeigen
+        Kontakt löschen
+        Adressbuch speichern
+        Adressbuch laden
+    Aufgaben-Manager:
+        Aufgabe hinzufügen
+        Alle Aufgaben anzeigen
+        Aufgabe als erledigt markieren
+        Aufgabenliste speichern
+        Aufgabenliste laden
+    Beenden: Das Programm beenden.
+
+5. Fehlerbehandlung und Eingabevalidierung:
+
+    Stelle sicher, dass ungültige Eingaben abgefangen und dem Benutzer eine passende Fehlermeldung angezeigt wird.
+
+6. Export nach Excel:
+
+    Exportiere die Daten in eine Excel-Datei (im .xlsx-Format). Nutze dazu die Apache POI-Bibliothek, um eine Excel-Datei zu erstellen, in der alle Daten der ArrayLists gespeichert werden. Beispiel für den Export:
+        Bibliothekssystem (Bücher)
+        Adressbuch (Kontakte)
+        Aufgaben-Manager (Aufgaben)
+
+Beispiel für den Excel-Export:
+
+    Erstelle eine Excel-Datei mit einem Sheet für jedes System (z. B. "Bücher", "Kontakte", "Aufgaben").
+    Exportiere die Daten der ArrayLists in die entsprechenden Excel-Sheets.
+
+Wichtige Hinweise:
+
+    Apache POI: Stelle sicher, dass du die Apache POI-Bibliothek in deinem Projekt verwendest, um mit Excel-Dateien zu arbeiten.
+    Serialisierung: Denke daran, dass du die Daten mit Serialisierung speichern und laden kannst (z. B. ObjectOutputStream und ObjectInputStream).

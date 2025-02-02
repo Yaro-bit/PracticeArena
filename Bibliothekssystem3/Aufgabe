@@ -1,0 +1,46 @@
+Aufgabe: Bibliotheks-Management-System
+
+Erstelle ein Programm, das ein Bibliotheks-Management-System simuliert. Das System soll Bücher, Mitglieder und Leihvorgänge verwalten.
+Alle wichtigen Programmierkonzepte wie Klassen, Arrays, Filtermethoden, 2D-Arrays, mathematische Berechnungen und String-Manipulation sollen integriert werden.
+
+Aufgabenbeschreibung
+
+1. Klassenstruktur
+Implementiere folgende Klassen:
+
+    Book: Repräsentiert ein Buch mit den Eigenschaften:
+        Titel (title)
+        Autor (author)
+        Kategorie (category, z. B. "Fiction", "Science", "History")
+        Verfügbarkeit (isAvailable, true oder false).
+
+    Member: Repräsentiert ein Mitglied der Bibliothek mit den Eigenschaften:
+        Name (name)
+        Mitgliedsnummer (memberId)
+        Anzahl der ausgeliehenen Bücher (borrowedBooksCount).
+
+    Loan: Repräsentiert einen Leihvorgang mit den Eigenschaften:
+        Mitgliedsname (memberName)
+        Buchtitel (bookTitle)
+        Rückgabedatum (dueDate, z. B. "2024-01-15").
+
+2. Datenhaltung
+
+    Erstelle folgende Arrays:
+        Book[] books: Enthält mindestens 10 Bücher.
+        Member[] members: Enthält mindestens 5 Mitglieder.
+        Loan[] loans: Enthält mindestens 3 aktive Leihvorgänge.
+
+3. Funktionen zum Filtern
+
+    Implementiere folgende Filtermethoden:
+        filterBooksByCategory(String category): Zeigt alle Bücher einer bestimmten Kategorie.
+        filterBooksByAvailability(): Zeigt alle verfügbaren Bücher.
+        filterMembersByName(String name): Zeigt Mitglieder mit einem bestimmten Namen.
+        filterLoansByMember(String memberName): Zeigt alle Leihvorgänge eines bestimmten Mitglieds.
+
+4. String-Manipulation
+
+    Implementiere folgende Methoden:
+        Konvertiere die Titel aller Bücher in Großbuchstaben und gib sie aus.
+        Formatiere die Namen der Mitglieder so, dass nur der erste Buchstabe groß ist (z. B. "anna" → "Anna").

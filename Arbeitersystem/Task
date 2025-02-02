@@ -1,0 +1,19 @@
+Aufgabe: Mitarbeiterverwaltung
+
+    1. Klasse Employee:
+        Felder: name, department, salary (privat, mit Getter/Setter).
+
+
+	2. Klasse EmployeeManager:
+    	Verwaltet die Liste der Mitarbeiter (ArrayList<Employee>).
+  
+   	 Implementiert Funktionen:
+        Mitarbeiter hinzufügen.
+        Alle Mitarbeiter anzeigen.
+        Mitarbeiter nach Namen suchen.
+        Durchschnittsgehalt berechnen.
+
+	3. Menu
+    Beinhaltet die Hauptmethode (main) und das Menü.
+    Interagiert mit dem Benutzer und ruft die Methoden von EmployeeManager auf.
+    
