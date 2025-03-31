@@ -829,62 +829,88 @@ Ein Index in einer Datenbank optimiert die Leseoperationen (Abfragen), indem er 
 |      - JVM: Java Virtual Machine, führt den Bytecode aus und  |
 |        ermöglicht die Ausführung von Java-Anwendungen auf     |
 |        verschiedenen Plattformen.                             |
-+---------------------------------------------------------------+
 
+
++---------------------------------------------------------------+
 #DB
 
 Das Entity-Relationship-Modell (ER-Modell) dient zur Planung von Datenbanken.
 
-    Entität: Ein eindeutig identifizierbares Objekt.
-    Beziehung: Verbindung zwischen Entitäten.
-    Attribut: Eigenschaft einer Entität.
+  * Entität:  Ein eindeutig identifizierbares Objekt.
+  * Beziehung: Verbindung zwischen Entitäten.
+  * Attribut: Eigenschaft einer Entität.
 
-Kardinalitäten von Beziehungen:
+Kardinalitäten:
+  [1:1]  A ↔ B  (Ehemann – Ehefrau)
+  [1:n]  A → B  (Museum – Kunstwerke)
+  [m:n]  A ⇄ B  (Student – Professor, via Verbindungstabelle)
 
-    1:1 → Jeder Datensatz aus A gehört genau einem aus B (z. B. Ehemann – Ehefrau).
-    1:n → Ein Datensatz aus A kann mehreren aus B zugeordnet sein (z. B. Museum – Kunstwerke).
-    m:n → Mehrere Datensätze aus A können mit mehreren aus B verknüpft sein, realisiert über eine Verbindungstabelle (z. B. Student – Professor).
++---------------------------------------------------------------+
+# Pattern from C
 
+* Abstrakte Innere Klasse → Für Vererbung & Struktur.
+* Callback (Interface) → Für Event-Handling & Async.
+* Delegate (Funktionales Interface) → Für Methodenübergabe.
 
-#Pattern from C
-Abstrakte Innere Klasse → Falls du Vererbung und mehr Struktur brauchst.
-Callback (Interface) → Falls du Event-Handling oder asynchrone Prozesse brauchst.
-Delegate (Funktionales Interface) → Falls du Methoden als Parameter flexibel übergeben willst.
++---------------------------------------------------------------+
+# JDBC Driver Typen #
 
+[Typ 1] JDBC-ODBC Bridge:
+  - ODBC als Vermittler, ineffizient, nicht empfohlen.
 
+[Typ 2] Native-API-Treiber:
+  - Nutzt native Datenbank-APIs, plattformabhängig.
 
-#JDBC Driver typen:
+[Typ 3] Netzwerkprotokoll-Treiber:
+  - Nutzt spezielles Protokoll, benötigt Middleware-Server.
 
-JDBC-ODBC-Bridge-Treiber (Typ 1):
+[Typ 4] Datenbankprotokoll-Treiber:
+  - Direkte DB-Kommunikation, schnell, plattformunabhängig.
 
-    Verwendet ODBC als Vermittler zwischen Java und der Datenbank.
-    Weniger effizient und nicht mehr empfohlen.
-    Erfordert ODBC-Treiber auf dem Client.
++---------------------------------------------------------------+
+#Java RMI
 
-Native-API-Treiber (Typ 2):
+Remote Method Invocation (RMI) erlaubt Java-Objekten, Methoden über ein Netzwerk
+aufzurufen, als wären sie lokal.
 
-    Nutzt native Datenbank-APIs (z. B. C-basierte APIs).
-    Schneller als Typ 1, aber plattformabhängig.
-    Benötigt native Bibliotheken für jede unterstützte Datenbank.
-
-Netzwerkprotokoll-Treiber (Typ 3):
-
-    Kommuniziert über ein spezielles Netzwerkprotokoll (z. B. für den Webserver).
-    Plattformunabhängig, benötigt jedoch einen Mittelsmann-Server.
-    Weniger ressourcenintensiv als Typ 2.
-
-Datenbankprotokoll-Treiber (Typ 4):
-
-    Kommuniziert direkt mit der Datenbank über deren nativen Netzwerkprotokoll.
-    Vollständig in Java geschrieben und plattformunabhängig.
-    Sehr effizient und am weitesten verbreitet.
-
-
-
-#Java remote method invocation (RMI) - ist eine API, die es Java-Objekten ermöglicht, Methoden über ein Netzwerk hinweg aufzurufen, als wären sie lokal. Dabei wird ein verteiltes System geschaffen, in dem ein Client Methoden eines entfernten
-Server-Objekts aufrufen kann. RMI nutzt eine Kombination aus Stubs (Client-Seite) und Skeletons (Server-Seite), um die Kommunikation zu abstrahieren. Es basiert auf der Java-Serialization für die 
-Übertragung von Objekten und verwendet das RMI-Registry für die Namensauflösung.
-RMI (Remote Method Invocation) ermöglicht es Java-Programmen, Methoden auf einem entfernten Server aufzurufen, als ob sie lokal ausgeführt werden.
+  * Nutzt Stubs (Client) & Skeletons (Server).
+  * Verwendet Java-Serialization für Objektübertragung.
+  * RMI-Registry zur Namensauflösung.
 
 Warum?
-Es ermöglicht verteilte Anwendungen, bei denen der Client und der Server auf verschiedenen Maschinen laufen, aber die Kommunikation und Methodenausführung nahtlos erfolgt.
+Ermöglicht verteilte Anwendungen, bei denen Client & Server auf verschiedenen
+Maschinen laufen, aber reibungslos interagieren.
+
++---------------------------------------------------------------+
+#Thread in Java
+
+Ein Thread ist ein separater Ablauf, der parallel zu anderen Code-Teilen läuft.  
+Start mit `.start()`.  
+Macht Programme schneller, aber Vorsicht bei gemeinsamem Datenzugriff!
+
++---------------------------------------------------------------+
+#Kaskadierung
+
+Verkettung von Elementen: Die Ausgabe eines wird zur Eingabe des nächsten.  
+Anwendungen:
+   - Elektrotechnik  
+   - Management 
+   - Informationstechnik   
+
++---------------------------------------------------------------+
+#Swing
+
+Java-Bibliothek für GUIs.  
+Basiert auf AWT, erweitert mit flexiblen Komponenten:  
+   - `JButton`  
+   - `JFrame`  
+   - `JPanel`  
+Plattformunabhängig & modern!  
++---------------------------------------------------------------+
+
+#Salting fuegt einem Passwort vor dem Hashen einen zufaelligen Wert hinzu, 
+um es gegen Angriffe wie Rainbow Tables zu schuetzen. Dadurch entstehen 
+einzigartige Hashes, selbst bei identischen Passwoertern. Das Salt wird 
+mit dem Hash gespeichert, um die Verifizierung zu ermoeglichen.
+
++---------------------------------------------------------------+
