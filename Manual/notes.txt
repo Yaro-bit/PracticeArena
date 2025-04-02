@@ -37,7 +37,7 @@ public class BruchZahl {
 ```
 
 ---
-
++---------------------------------------------------------------+
 ###Kunde
 
 **Toolbox**
@@ -80,7 +80,7 @@ String str = Integer.toString(zahl);  // Wandelt die Zahl 123 in den String "123
 ```
 
 ---
-
++---------------------------------------------------------------+
 ###Brüche als Objekte
 
 **Brüche als Objekte**
@@ -93,7 +93,7 @@ BruchZahl bruch1 = new BruchZahl(1, 2);   // 1/2
 BruchZahl bruch2 = new BruchZahl(1, 3);   // 1/3
 BruchZahl ergebnis = bruch1.addiere(bruch2); // Ergebnis: 5/6
 ```
-
++---------------------------------------------------------------+
 ### Immutable Klasse Konzept
 
 **Konstruktor**
@@ -108,7 +108,7 @@ public BruchZahl(int zaehler, int nenner) {
     this.nenner = nenner;
 }
 ```
-
++---------------------------------------------------------------+
 **Mathematische Operationen**
 
 Methoden wie `addiere()`, `subtrahiere()`, `multipliziere()` und `dividiere()` berechnen den neuen Zähler und Nenner.
@@ -122,7 +122,7 @@ public BruchZahl dividiere(BruchZahl anderer) {
     return new BruchZahl(neuerZaehler, neuerNenner);
 }
 ```
-
++---------------------------------------------------------------+
 **Kürzen eines Bruchs**
 
 Ein Bruch wird durch den größten gemeinsamen Teiler (ggT) gekürzt.
@@ -142,7 +142,7 @@ public BruchZahl kuerze() {
 Bei einer Division durch null wird eine `ArithmeticException` geworfen.
 
 ---
-
++---------------------------------------------------------------+
 ### Kapselung
 
 **Klasse**
@@ -161,7 +161,7 @@ public class Person {
     }
 }
 ```
-
++---------------------------------------------------------------+
 **Kapselung**
 
 Kapselung schützt die Daten eines Objekts vor unbefugtem Zugriff. Mit Getter- und Setter-Methoden kannst du auf die Felder zugreifen oder sie ändern.
@@ -176,13 +176,13 @@ public void setName(String name) {
     this.name = name;
 }
 ```
-
++---------------------------------------------------------------+
 **Fortgeschrittene Kapselung**
 
 Es gibt auch spezielle Initialisierer, die bei der Objektinitialisierung helfen, sowie innere Klassen, die auf Felder und Methoden der äußeren Klasse zugreifen können.
 
 ---
-
++---------------------------------------------------------------+
 ### HashSet vs. TreeSet
 
 - **HashSet:** Schneller beim Suchen und Hinzufügen von Elementen (O(1)), jedoch ohne garantierte Reihenfolge.
@@ -197,14 +197,14 @@ set.add("Kirsche");
 ```
 
 ---
-
++---------------------------------------------------------------+
 ### ArrayList vs. LinkedList
 
 - **ArrayList:** Bietet schnellen Zugriff auf Elemente (O(1)), aber langsames Einfügen und Löschen (O(n)).
 - **LinkedList:** Bietet schnelles Einfügen und Löschen (O(1)), aber langsamen Zugriff auf Elemente über den Index (O(n)).
 
 ---
-
++---------------------------------------------------------------+
 ### Java Sortierung mit `Comparator`
 
 Ein `Comparator` ermöglicht es dir, die Reihenfolge von Objekten nach einer bestimmten Regel festzulegen.
@@ -217,7 +217,7 @@ public int compareTo(Person o) {
     return collator.compare(this.name, o.name);
 }
 ```
-
++---------------------------------------------------------------+
 ### Default Konstruktor
 
 Ein Default-Konstruktor ist ein Konstruktor ohne Parameter, der automatisch von der Klasse bereitgestellt wird, wenn kein anderer Konstruktor definiert ist. Er wird verwendet, um ein Objekt mit Standardwerten zu initialisieren.
@@ -241,7 +241,7 @@ public class Auto {
     }
 }
 ```
-
++---------------------------------------------------------------+
 
 ### Basisklasse 
 
@@ -249,7 +249,7 @@ public class Auto {
 
 
 
-
++---------------------------------------------------------------+
 ## JFRAME Klasse ist eine möglichkeit ein Java fenster zu erstellen
 
 // Swing - billig schnell cool
@@ -272,7 +272,7 @@ Static Variablen wereb nicht serialisiert.
 
 
 
-
++---------------------------------------------------------------+
 ### Vererbung II - Serielisierung
 
 1. List
@@ -298,7 +298,7 @@ Serialisierung in Java
     Benötigte Schnittstelle: Serializable-Interface.
     Vorteil: Ermöglicht Persistenz und Kommunikation zwischen verschiedenen Systemen.
 
-
++---------------------------------------------------------------+
 
 Hierzu haben wir eine universelle Toolbox verwendet, um serialisierbare Objekte zu speichern und zu laden. 
 Um mit null-Werten umzugehen, gibt es zwei Ansätze: 
@@ -308,7 +308,7 @@ Optional        - ist die empfohlene Java-Klasse zur Handhabung von null-Werten,
 Eigene Klasse   - wäre aufwendiger, aber könnte genutzt werden, um NullPointerExceptions manuell zu vermeiden. 
 
 
-
++---------------------------------------------------------------+
 Bei der Deep Copy in Java geht es um Serialisierung: 
 Man serialisiert das Objekt (erstellt eine Byte-Kopie) und deserialisiert es anschließend, um eine neue, unabhängige Kopie des Objekts zu erstellen.
 
@@ -322,7 +322,7 @@ dispose():     Gibt GUI-Komponenten (z.B. Fenster) in Swing/AWT frei.
 Beispiel:      frame.dispose();
 
 
-
++---------------------------------------------------------------+
 
 Es kann aber auch der compiler für den Programmierer übernehmen.
 finally block muss aber immer gemacht werden.
@@ -344,7 +344,7 @@ Es ist eine grundlegende Entscheidung, ob du ein Fenster mit dispose() schließt
 dispose() gibt die vom Fenster belegten Ressourcen frei und entfernt es vollständig. Wenn du das Fenster jedoch nur ausblenden möchtest, ohne die Ressourcen freizugeben, solltest du setVisible(false) verwenden.
 Wichtig ist, dass du nicht einfach das Fenster unsichtbar machst und dann ein neues öffnest, da dies zu unnötigen Ressourcenkosten führen kann.
 
-
++---------------------------------------------------------------+
 #PROJEKTANFORDERUNGEN:
 
     Spring Data mit JDBC (Derby):
@@ -365,17 +365,17 @@ Wichtig ist, dass du nicht einfach das Fenster unsichtbar machst und dann ein ne
 
 (Fasade Pattern benutzen) - add. Fabrikmuster (optional)
 
-
++---------------------------------------------------------------+
 Ein Konstruktor dient der Initialisierung eines Objekts. Er kann Ausnahmen auslösen oder sie behandeln, wenn bei der Initialisierung Fehler auftreten.
 
-
++---------------------------------------------------------------+
 
 #Toolbox: Eine Sammlung nützlicher Funktionen, die jedoch aufgrund von Vererbung und komplexen Architekturen schwer zu pflegen sein kann. (Speichern und Laden)
 
 Fabrikmethode: Eine Methode zur Erzeugung von Objekten. Sie stellt eine saubere Alternative zur Toolbox dar, indem sie die Objektinstanziierung kapselt und ermöglicht, 
 verschiedene Typen von Objekten zu erzeugen, ohne dass der Aufrufer die genaue Klasse kennen muss. Sie kann auch zur Behandlung von Ausnahmen verwendet werden.
 
-
++---------------------------------------------------------------+
 #SOLID ist ein Akronym für fünf Prinzipien der objektorientierten Programmierung, die helfen, den Code wartbar, erweiterbar und verständlich zu halten:
     S - Single Responsibility Principle (SRP): Eine Klasse sollte nur eine einzige Aufgabe haben.
     O - Open/Closed Principle (OCP): Eine Klasse sollte offen für Erweiterungen, aber geschlossen für Änderungen sein.
@@ -384,7 +384,7 @@ verschiedene Typen von Objekten zu erzeugen, ohne dass der Aufrufer die genaue K
     D - Dependency Inversion Principle (DIP): Abhängigkeiten sollten von abstrakten Schnittstellen, nicht von konkreten Implementierungen abhängen.
 
 #KISS - Keep it small and stupid
-
++---------------------------------------------------------------+
 #Design Patterns - diese sollten oft frühzeitig in der Entwicklung berücksichtigt werden, besonders wenn du mit komplexeren Klassen oder Systemen arbeitest.
 Wenn du eine neue Klasse erstellst, ist es sinnvoll, das passende Designmuster auszuwählen, um Struktur und Wartbarkeit zu gewährleisten.
 Es geht darum, eine solide Grundlage zu schaffen, die später einfacher erweitert und gewartet werden kann.
@@ -407,17 +407,17 @@ Häufig angewandte Designmuster bei der Erstellung neuer Klassen:
 
     Decorator Pattern:
         Wird verwendet, um die Funktionalität eines Objekts zur Laufzeit zu erweitern, ohne die ursprüngliche Klasse zu verändern.
-
++---------------------------------------------------------------+
 Modellierung in Java bezieht sich auf den Prozess, die realen Anforderungen und Konzepte in Softwareobjekte und -strukturen zu übersetzen.
 Dabei wird die Geschäftslogik, der Ablauf und die Daten in einer abstrakten Form dargestellt, oft durch Klassen, Objekte und deren Beziehungen. 
 Ziel der Modellierung ist es, eine klare und verständliche Repräsentation des Systems zu schaffen, die die Grundlage für die Implementierung bildet.
-
++---------------------------------------------------------------+
 In Java erfolgt Modellierung typischerweise durch:
     Klassen und Objekte (Datenstruktur und Verhalten),
     Vererbung (Gemeinsamkeiten zwischen Klassen),
     Schnittstellen und abstrakte Klassen (Verträge und allgemeine Struktur),
     Beziehungen (Assoziationen, Aggregationen, Kompositionen).
-
++---------------------------------------------------------------+
 Funktionale Anforderungen:
     Excel-Daten importieren und extrahieren.
     Daten validieren.
@@ -430,19 +430,19 @@ Nicht-funktionale Anforderungen:
     	Einfache Benutzeroberfläche.
     	Sicher und skalierbar.
 	Sinnvoll wartbar
-
++---------------------------------------------------------------+
 Prozess zur Ableitung der Architektur aus nicht-funktionalen Anforderungen:
     Identifikation: Definiere nicht-funktionale Anforderungen (z.B. Performance, Sicherheit, Skalierbarkeit).
     Bewertung: Bestimme, wie diese Anforderungen die Architektur beeinflussen.
     Architekturentscheidungen: Wähle passende Architekturansätze (z.B. Caching, Microservices, Verschlüsselung).
     Muster auswählen: Nutze Architekturpattern (z.B. Schichtenarchitektur, Event-Driven).
     Evaluierung: Überprüfe regelmäßig, ob die Architektur die Anforderungen erfüllt und passe sie an.
-
++---------------------------------------------------------------+
 
 Grales ist ein Open-Source-Framework zur Erstellung von modernen, robusten, skalierbaren und wartbaren Microservices und Webanwendungen.
 Es basiert auf Grails, einem beliebten Framework für die Entwicklung von Webanwendungen in Groovy und Java und kombiniert die besten Konzepte von Spring und Grails.
 Grales ermöglicht es Entwicklern, Microservices mit minimalem Aufwand zu erstellen, indem es Spring Boot und andere moderne Technologien nutzt.
-
++---------------------------------------------------------------+
 #VERERBUNG MIT INTEFACES
 Basisklasse Vererbung, vererbung mit Interfaces:
 In Java kann eine Klasse nur von einer einzigen Klasse erben, da Java einfache Vererbung unterstützt.
@@ -486,19 +486,19 @@ public class Hund extends Tier {
 
 --wichtig ist die Aussage welche man mit seinem code trifft--
 Hint: defensives programmieren 
-
++---------------------------------------------------------------+
 
 Ein Interface in Java definiert Methoden, die von einer Klasse implementiert werden müssen, ohne die Implementierung festzulegen. Es ermöglicht das Teilen von Funktionalitäten zwischen Klassen, ohne dass diese eine gemeinsame Basisklasse erben müssen.
 Beispiele:
-
++---------------------------------------------------------------+
 Serializable und Cloneable sind Marker-Interfaces, d.h. sie definieren keine Methoden. Sie kennzeichnen nur, dass Objekte der Klasse bestimmte Eigenschaften haben (z.B. serialisierbar oder klonbar).
 Comparable ist ein Interface, das die Methode compareTo(T o) definiert, die implementiert werden muss, um Objekte zu vergleichen.
-
++---------------------------------------------------------------+
 Marker-Interfaces: Keine Methoden (z.B. Serializable, Cloneable).
 Normale Interfaces: Definieren Methoden, die implementiert werden müssen (z.B. Comparable).
 
 
-
++---------------------------------------------------------------+
 #POLYMORPHISMUS
 In Java kann eine Basisklasse gemeinsamen Code (z.B. für Laden und Speichern von Daten) bereitstellen, den Unterklassen wiederverwenden. 
 So wird Redundanz vermieden.
@@ -510,20 +510,20 @@ Eine abstrakte Methode in einer abstrakten Klasse ist wie eine leere Anleitung.
 Sie sagt, was gemacht werden muss, aber nicht, wie es geht. Jede Unterklasse muss diese Anleitung ausfüllen und erklären, wie es geht. 
 Man kann keine Objekte von der abstrakten Klasse direkt erstellen, nur von den Unterklassen.
 
-
++---------------------------------------------------------------+
 #ANONYME INNERE KLASSEN
 Anonyme innere Klassen sind eine spezielle Art von inneren Klassen in Java, die keine explizite Klassendeklaration haben. 
 Sie werden verwendet, wenn eine Klasse nur einmal benötigt wird, typischerweise bei der Erstellung von Objekten, 
 die Instanzen eines Interfaces oder einer abstrakten Klasse sein müssen. Sie werden direkt im Code erstellt, 
 ohne eine benannte Klasse zu definieren, was den Code kürzer und lesbarer macht.
-
++---------------------------------------------------------------+
 #INTERFACES
 Ein Interface in Java ist eine Sammlung abstrakter Methoden, die von einer Klasse implementiert werden können. 
 Ein Interface beschreibt, was eine Klasse tun sollte, aber nicht, wie sie es tun sollte. Interfaces ermöglichen es, 
 dass verschiedene Klassen verschiedene Implementierungen für die gleichen Methoden bereitstellen können, wodurch Polymorphismus ermöglicht wird.
 Eine Klasse, die ein Interface implementiert, muss alle Methoden des Interfaces implementieren (sofern sie nicht abstrakt ist). 
 Ein Interface kann auch Konstanten enthalten, aber keine Instanzvariablen oder Methoden mit einer Implementierung.
-
++---------------------------------------------------------------+
 #KOPPLUNG
 Kopplung in Java beschreibt, wie stark Klassen oder Module voneinander abhängen.
 Starke Kopplung bedeutet, dass Klassen direkt voneinander abhängig sind. 
@@ -533,7 +533,7 @@ Schwache Kopplung bedeutet, dass Klassen so wenig wie möglich voneinander abhä
 Ziel: Eine niedrige Kopplung sorgt für flexibleren, wartbareren und erweiterbaren Code.
 
 
-
++---------------------------------------------------------------+
 #SPRING easy Setup - für Jar Java21 - Maven
 Lombok 
 Spring Web 
@@ -562,7 +562,7 @@ Build & Run:
     Baue das Projekt mit mvn clean install.
     Starte das Projekt mit mvn spring-boot:run
 
-
++---------------------------------------------------------------+
 #STATIC:
 In Java sind statische Klassen nicht direkt erlaubt, aber du kannst eine statische innere Klasse (static nested class) erstellen. 
 Eine statische Klasse hat folgende Eigenschaften:
@@ -571,7 +571,7 @@ Sie kann ohne Instanziierung der äußeren Klasse verwendet werden.
 Alle Mitglieder der statischen inneren Klasse sind auch statisch.
 Eine statische innere Klasse kann nicht auf nicht-statische Mitglieder der äußeren Klasse zugreifen.
 
-
++---------------------------------------------------------------+
 #SINGLETON
 Singleton-Entwurfsmuster ist ein Designmuster, das sicherstellt, 
 dass eine Klasse nur eine einzige Instanz hat und global darauf zugegriffen werden kann.
@@ -583,7 +583,7 @@ Merkmale des Singleton-Musters:
     Globaler Zugriff: Die Instanz ist über eine statische Methode zugänglich.
     Verhindert Instanziierung: Der Konstruktor ist privat, sodass keine weiteren Instanzen der Klasse erstellt werden können.
 
-
++---------------------------------------------------------------+
 
 #FASADE
 Das Fassade-Designmuster bietet eine vereinfachte Schnittstelle für ein komplexes Subsystem. 
@@ -596,7 +596,7 @@ Hauptziele des Fasade-Patterns:
     Reduzierung der Kopplung: Indem der Benutzer mit der Fassade anstatt direkt mit den komplexen Klassen des Subsystems interagiert, wird die Kopplung zwischen den Modulen reduziert.
     Bessere Wartbarkeit und Erweiterbarkeit: Änderungen am Subsystem können ohne Auswirkungen auf die Benutzer der Fassade durchgeführt werden, da die Fassade die interne Komplexität verbirgt.
 
-
++---------------------------------------------------------------+
 #EXCEPTIONS
 
 Throwable 			(oberste Klasse, von der alle Fehler und Ausnahmen erben)
@@ -610,21 +610,21 @@ Checked Exception: 	Wird zur Kompilierzeit überprüft und muss vom Programmiere
 
 Unchecked Exception: 	Wird zur Laufzeit überprüft und erfordert keine explizite Behandlung zur Kompilierzeit.
         			Beispiele: NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException, ClassCastException, IllegalArgumentException.
-
++---------------------------------------------------------------+
 Keywords zur Fehlerbehandlung in Java
     try: 	Definiert einen Block von Code, der auf Fehler getestet wird.
     catch: 	Definiert einen Block von Code, der bei Fehlern im try-Block ausgeführt wird.
     finally: 	Wird immer ausgeführt, unabhängig davon, ob eine Ausnahme aufgetreten ist oder nicht.
     throw: 	Ermöglicht das Werfen von benutzerdefinierten Fehlern.
     throws: 	Ermöglicht das Weitergeben von Ausnahmen von einer Methode.
-
++---------------------------------------------------------------+
 Java Global exception handler - Ein globaler Ausnahmebehandler in Java wird mit Thread.setDefaultUncaughtExceptionHandler() gesetzt und fängt alle nicht behandelten Ausnahmen (Uncaught Exceptions) ab.
 In einer Standalon Applikation in Java, soll ich mitbekommen, das der Speicher ausgegangen ist.
 (Dies soll in Logging mit aufgenommen werden)
 
 
 
-
++---------------------------------------------------------------+
 #TREE SPRING
 DRY - Dont Repeat Yourself
 
@@ -637,7 +637,7 @@ Hund & Katze (1 & 2 Klasse)
 
 @Annotation ist eine benutzerdefinierte Annotation, die auf die Basisklasse Tier sowie die abgeleiteten Klassen Hund und Katze angewendet wird. 
 Sie könnte z.B. dazu verwendet werden, diese Klassen mit zusätzlichem Metadaten zu versehen, die zur Laufzeit verfügbar sind.
-
++---------------------------------------------------------------+
 
 #SPRING Boot API
 
@@ -645,7 +645,7 @@ pom.xml-Datei (Project Object Model) in einem Maven-Projekt ist dafür verantwor
 und andere Projektmetadaten zu definieren.Sie stellt sicher, dass das Projekt die richtigen Bibliotheken und Tools verwendet, um korrekt 
 gebaut und ausgeführt zu werden.
 
-
++---------------------------------------------------------------+
 #ANNOTATIONS:
 
     @SpringBootApplication 							– Startet die Spring Boot-Anwendung.
@@ -656,13 +656,13 @@ gebaut und ausgeführt zu werden.
     @RequestMapping, @GetMapping, @PostMapping, @PathVariable, @RequestParam 	– HTTP-Routing und Parameterbindung.
     @Transactional 								– Markiert Methoden für Transaktionsverwaltung.
 
-
++---------------------------------------------------------------+
 
 #API's:
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| 
 |Protokoll/Architektur      | Beschreibung                                        | Vorteile                               | Nachteile                                                      | Java-Technologie              |
 |-------------------------- |-----------------------------------------------------|--------------------------------------- |----------------------------------------------------------------|-------------------------------|
-| RPC                       | Aufruf von Funktionen auf entfernten Servern        | Einfacher Funktionsaufruf              | Weniger flexibel, weniger skalierbar                           | RMI (Remote Method Invocation)|
+| RPC                       | Aufruf von Funktionen auf entfernten Servern        | Einfacher Funktionsaufruf              | Weniger flexibel, weniger skalierbar                           | Serialisieren und deserial..  |
 | CORBA                     | Kommunikation zwischen verteilten Objekten          | Plattform- und sprachunabhängig        | Komplex, schwergewichtig                                       | Java IDL, JacORB              |
 | RMI                       | Java-spezifische Remote-Kom durch Methodenaufrufe   | Objektorientiert, in Java integrierbar | Nur für Java geeignet, Performance-Overhead                    | RMI (Remote Method Invocation)|
 | SOAP                      | XML-basiertes Protokoll für Webservices             | Unterstützt Sicherheit, Transaktionen  | Hoher Overhead, komplex                                        | JAX-WS                        |
@@ -700,7 +700,7 @@ gebaut und ausgeführt zu werden.
 |-------|-----------------------------|---------------------------------------------------------------|
 
 
-
++---------------------------------------------------------------+
 ANFORDERUNGEN BEI SOFTWAREENTWICKLUNG:
 
 Funktionale Anforderungen:
@@ -718,14 +718,14 @@ Nicht-funktionale Anforderungen:
     Benutzerfreundlichkeit (Usability): Die Software muss einfach und intuitiv zu bedienen sein.
     Wartbarkeit: Der Code muss so geschrieben sein, dass er einfach gewartet und erweitert werden kann.
     Kompatibilität: Die Anwendung muss auf verschiedenen Systemen und Browsern (z.B. cross-platform) funktionsfähig sein.
-
++---------------------------------------------------------------+
 
 #BULLETPOINTS:
 	- Point of no return while PM
 	- Clean code
 	- Efficiente Speicherverwaltung
 	- Cloud, AI
-
++---------------------------------------------------------------+
 #SPRING
 Beans: 				Java-Objekte, die vom Spring-Container verwaltet werden und für Geschäftslogik, Datenzugriff oder andere Funktionen verwendet werden. (Faktory wo du Objekt bekommst)
 Spring-Container: 		Verwaltet Beans und deren Lebenszyklus, instanziiert sie und führt die Dependency Injection durch.
@@ -735,19 +735,19 @@ In Spring gibt es 2 arten von Objekte:
 - Objekte die nicht gemanaged werden von Kontainer
 - Objekte die im Kontainer gemanaged werden 
 
-
++---------------------------------------------------------------+
 #LOMBOK
 Lombok ist eine Java-Bibliothek, die Boilerplate-Code reduziert. 
 Mit einfachen Annotationen wie @Getter, @Setter, @ToString und @EqualsAndHashCode generiert Lombok automatisch Code für Getter, Setter, 
 Konstruktoren und andere Methoden.  Das spart Entwicklungszeit und macht den Code sauberer. Es funktioniert problemlos mit Java 21, 
 solange die richtige Lombok-Version eingebunden ist.
 
-
++---------------------------------------------------------------+
 #LAMBDA
 Lambdas in Java sind anonyme Funktionen, die als Argumente übergeben werden und eine kompakte Syntax für die Implementierung funktionaler Interfaces bieten.
 (parameter) -> { // Code block }   BSP: (int a, int b) -> a + b; Lambdas werden häufig in Kombination mit Streams und Methoden wie forEach, map oder filter verwendet, um Funktionen zu übergeben, ohne eine separate anonyme Klasse zu erstellen.
 
-
++---------------------------------------------------------------+
 #NULLPOINTEREXCEPTION (Lombok bibliothek)
 Ein weiteres Konzept in Java ist die konsequente Vermeidung von NullPointerException. Das geht oft durch die Kombination der oben genannten Methoden, insbesondere Optional oder durch präventives Setzen von Standardwerten.
 
@@ -755,7 +755,7 @@ Ein weiteres Konzept in Java ist die konsequente Vermeidung von NullPointerExcep
     Wrapper-Klassen sind eine häufige Wahl, wenn du mit primitiven Datentypen und deren null-Werten umgehen musst.
     Das Null Object Pattern hilft, null-Prüfungen zu vermeiden, indem es ein spezielles Objekt anstelle von null verwendet.
 
-
++---------------------------------------------------------------+
 #GENERATION TYPE TABLE - Warum sollte man GenerationType.TABLE vermeiden?
 Die Verwendung von GenerationType.TABLE ist oft nicht empfohlen, und das aus folgenden Gründen:
 	Leistungseinbußen: Der Generierungsmechanismus über eine separate Tabelle bedeutet, dass bei jeder ID-Anforderung eine Datenbankabfrage und ein Locking-Vorgang stattfinden müssen. Dies kann zu Leistungsproblemen führen, besonders bei Hochlastsystemen.
@@ -764,30 +764,30 @@ Die Verwendung von GenerationType.TABLE ist oft nicht empfohlen, und das aus fol
 	Datenbank-Abhängigkeit: Die Strategie TABLE ist nicht so flexibel wie z. B. SEQUENCE, da sie stark von der zugrunde liegenden Datenbankstruktur abhängt.
 	Es ist nicht so portabel wie IDENTITY oder SEQUENCE, die oft in verschiedenen Datenbanken problemlos verwendet werden können.
 
-
++---------------------------------------------------------------+
 #SQL-SERVER
 Ein SQL-Server ist eine Software, die Daten in einer relationalen Datenbank speichert, verwaltet und über SQL-Abfragen zugänglich macht. 
 Er ermöglicht es Anwendungen und Clients, Daten zu speichern, abzurufen, zu bearbeiten und zu löschen. SQL-Server bieten auch Funktionen 
 wie Transaktionsmanagement, Zugriffskontrolle und Datensicherung.
-
++---------------------------------------------------------------+
 
 #DATENFORMATE
 	XML (Extensible Markup Language): Ein strukturiertes, textbasiertes Format zur Darstellung von Daten in einer hierarchischen Baumstruktur. Häufig verwendet für Konfigurationen und Webdienste.
 	JSON (JavaScript Object Notation): Ein leichtgewichtiges, textbasiertes Datenformat, das Daten als Schlüssel-Wert-Paare darstellt. Sehr beliebt für Web-APIs und zwischen Systemen zur Datenübertragung.
 	CSV (Comma-Separated Values): Ein einfaches, textbasiertes Format, bei dem Daten durch Kommata getrennt sind. Häufig für tabellarische Daten und den Austausch von Informationen zwischen Tabellenkalkulationen genutzt.
 	BIN (Binary): Ein binäres Datenformat, das Daten in einer kompakten Form speichert. Wird oft für Programme, Mediendateien oder proprietäre Formate verwendet, bei denen Effizienz und Geschwindigkeit im Vordergrund stehen.
-
++---------------------------------------------------------------+
 
 #PAGES & VIEW Konzept
 View: Eine virtuelle Tabelle, die eine gespeicherte SQL-Abfrage darstellt und keine eigenen Daten speichert. Wird verwendet, um komplexe Abfragen zu vereinfachen und Daten zu abstrahieren.
 Page: Eine physische Speichereinheit in der Datenbank (z.B. 8 KB), in der Daten und Indexe gespeichert werden. Sie hilft der Datenbank, Daten effizient zu verwalten.
-
++---------------------------------------------------------------+
 #INDEX DB
 Ein Index in einer Datenbank optimiert die Leseoperationen (Abfragen), indem er schnellen Zugriff auf Daten ermöglicht.
 
     Optimierung für Lesen: Indizes beschleunigen Suchvorgänge, Filter und Sortierungen, da sie die Daten in einer strukturierten Reihenfolge speichern.
     Auswirkung auf Schreiben: Indizes verlangsamen Schreiboperationen (INSERT, UPDATE, DELETE), weil die Indizes bei jeder Änderung aktualisiert werden müssen.
-
++---------------------------------------------------------------+
 #Liskovsches Substitutionsprinzip - besagt, dass Objekte einer abgeleiteten Klasse in allen Kontexten, in denen Objekte der Basisklasse verwendet werden, ohne Veränderung des Verhaltens eingesetzt werden können.
 
 
@@ -840,20 +840,20 @@ Das Entity-Relationship-Modell (ER-Modell) dient zur Planung von Datenbanken.
   * Beziehung: Verbindung zwischen Entitäten.
   * Attribut: Eigenschaft einer Entität.
 
-Kardinalitäten:
+#Kardinalitäten:
   [1:1]  A ↔ B  (Ehemann – Ehefrau)
   [1:n]  A → B  (Museum – Kunstwerke)
   [m:n]  A ⇄ B  (Student – Professor, via Verbindungstabelle)
 
 +---------------------------------------------------------------+
-# Pattern from C
+#Pattern from C
 
 * Abstrakte Innere Klasse → Für Vererbung & Struktur.
 * Callback (Interface) → Für Event-Handling & Async.
 * Delegate (Funktionales Interface) → Für Methodenübergabe.
 
 +---------------------------------------------------------------+
-# JDBC Driver Typen #
+#JDBC Driver Typen
 
 [Typ 1] JDBC-ODBC Bridge:
   - ODBC als Vermittler, ineffizient, nicht empfohlen.
@@ -908,9 +908,46 @@ Basiert auf AWT, erweitert mit flexiblen Komponenten:
 Plattformunabhängig & modern!  
 +---------------------------------------------------------------+
 
-#Salting fuegt einem Passwort vor dem Hashen einen zufaelligen Wert hinzu, 
+#Salting 
+
+Salting fuegt einem Passwort vor dem Hashen einen zufaelligen Wert hinzu, 
 um es gegen Angriffe wie Rainbow Tables zu schuetzen. Dadurch entstehen 
 einzigartige Hashes, selbst bei identischen Passwoertern. Das Salt wird 
 mit dem Hash gespeichert, um die Verifizierung zu ermoeglichen.
 
 +---------------------------------------------------------------+
+
+ProcessBuilder & ProcessObject – H2-Server starten
+    Tech: Verwendet ProcessBuilder, um externe Prozesse zu starten. Ermöglicht die flexible Übergabe von Parametern, das Umleiten von Ein- und Ausgabeströmen sowie die Steuerung des gestarteten Prozesses.
+    Beschreibung: Startet den H2-Datenbankserver als separaten Prozess mit den erforderlichen Argumenten (-tcp, -tcpAllowOthers, -tcpPort 9092). 
+    Dadurch kann die Datenbank extern erreichbar gemacht und für mehrere Clients bereitgestellt werden.
+
+Apache Commons Exec – Externe Programme starten (z. B. PDF-Reader)
+    Tech: Nutzt Apache Commons Exec als erweiterte Alternative zu ProcessBuilder, die mehr Kontrolle über externe Prozesse bietet, darunter Timeout-Management und asynchrone Prozessverwaltung.
+    Beschreibung: Startet eine externe Anwendung, z. B. einen PDF-Reader, mit einer angegebenen Datei. Unter Windows wird start verwendet, unter Linux xdg-open. 
+    Optional kann ein bestimmtes Programm (z. B. SumatraPDF.exe) definiert werden, um gezielt bestimmte Anwendungen zu nutzen.
+
++---------------------------------------------------------------+
+
+
+OSI-7-Schichten-Modell - Für jede schicht gibt es eigene protokolle:
+┌────────────────────────┐  
+│    HTTP, FTP, SMTP     │  7. Anwendungsschicht (Application)
+├────────────────────────┤   
+│   Verschlüsselung, TLS │  6. Darstellungsschicht (Presentation)  
+├────────────────────────┤  
+│    Sitzungskontrolle   │  5. Sitzungsschicht (Session)
+├────────────────────────┤  
+│        TCP, UDP        │  4. Transportschicht (Transport)
+├────────────────────────┤
+│       IP, ICMP, ARP    │  3. Vermittlungsschicht (Network)  
+├────────────────────────┤
+│     Ethernet, MAC      │  2. Sicherungsschicht (Data Link)  
+├────────────────────────┤
+│  Kabel, WLAN, Glasfaser│  1. Bitübertragungsschicht (Physical)  
+└────────────────────────┘  
+
+
++---------------------------------------------------------------+
+
+
