@@ -2,41 +2,16 @@
 
 **ToString**
 
-Die Methode `toString()` wird verwendet, um Objekte als Zeichenkette darzustellen. Standardmäßig gibt sie nur den Klassennamen und die Speicheradresse zurück. Wenn du die Methode überschreibst, kannst du eine benutzerdefinierte Darstellung des Objekts liefern.
+Die Methode `toString()` wird verwendet, um Objekte als Zeichenkette darzustellen. Standardmäßig gibt sie nur den Klassennamen und die Speicheradresse zurück. 
+Wenn du die Methode überschreibst, kannst du eine benutzerdefinierte Darstellung des Objekts liefern.
 
-**Beispiel:**
-```java
-@Override
-public String toString() {
-    return "Bruch: " + zaehler + "/" + nenner;
-}
-```
 
++---------------------------------------------------------------+
 **Bruchzahlen als Objekte**
 
-Brüche können in Java als Objekte durch die Klasse `BruchZahl` dargestellt werden. Ein Bruch hat einen Zähler und einen Nenner. Du kannst dann mit diesen Objekten mathematische Operationen wie Addition, Subtraktion, Multiplikation und Division durchführen.
+Brüche können in Java als Objekte durch die Klasse `BruchZahl` dargestellt werden. Ein Bruch hat einen Zähler und einen Nenner. 
+Du kannst dann auch mit diesen Objekten mathematische Operationen wie Addition, Subtraktion, Multiplikation und Division durchführen.
 
-**Beispiel:**
-```java
-public class BruchZahl {
-    private int zaehler;
-    private int nenner;
-
-    public BruchZahl(int zaehler, int nenner) {
-        if (nenner == 0) throw new ArithmeticException("Nenner darf nicht null sein!");
-        this.zaehler = zaehler;
-        this.nenner = nenner;
-    }
-
-    public BruchZahl addiere(BruchZahl anderer) {
-        int neuerZaehler = this.zaehler * anderer.nenner + anderer.zaehler * this.nenner;
-        int neuerNenner = this.nenner * anderer.nenner;
-        return new BruchZahl(neuerZaehler, neuerNenner);
-    }
-}
-```
-
----
 +---------------------------------------------------------------+
 ###Kunde
 
@@ -516,6 +491,7 @@ Anonyme innere Klassen sind eine spezielle Art von inneren Klassen in Java, die 
 Sie werden verwendet, wenn eine Klasse nur einmal benötigt wird, typischerweise bei der Erstellung von Objekten, 
 die Instanzen eines Interfaces oder einer abstrakten Klasse sein müssen. Sie werden direkt im Code erstellt, 
 ohne eine benannte Klasse zu definieren, was den Code kürzer und lesbarer macht.
+
 +---------------------------------------------------------------+
 #INTERFACES
 Ein Interface in Java ist eine Sammlung abstrakter Methoden, die von einer Klasse implementiert werden können. 
@@ -523,6 +499,7 @@ Ein Interface beschreibt, was eine Klasse tun sollte, aber nicht, wie sie es tun
 dass verschiedene Klassen verschiedene Implementierungen für die gleichen Methoden bereitstellen können, wodurch Polymorphismus ermöglicht wird.
 Eine Klasse, die ein Interface implementiert, muss alle Methoden des Interfaces implementieren (sofern sie nicht abstrakt ist). 
 Ein Interface kann auch Konstanten enthalten, aber keine Instanzvariablen oder Methoden mit einer Implementierung.
+
 +---------------------------------------------------------------+
 #KOPPLUNG
 Kopplung in Java beschreibt, wie stark Klassen oder Module voneinander abhängen.
@@ -610,6 +587,7 @@ Checked Exception: 	Wird zur Kompilierzeit überprüft und muss vom Programmiere
 
 Unchecked Exception: 	Wird zur Laufzeit überprüft und erfordert keine explizite Behandlung zur Kompilierzeit.
         			Beispiele: NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException, ClassCastException, IllegalArgumentException.
+
 +---------------------------------------------------------------+
 Keywords zur Fehlerbehandlung in Java
     try: 	Definiert einen Block von Code, der auf Fehler getestet wird.
@@ -617,12 +595,11 @@ Keywords zur Fehlerbehandlung in Java
     finally: 	Wird immer ausgeführt, unabhängig davon, ob eine Ausnahme aufgetreten ist oder nicht.
     throw: 	Ermöglicht das Werfen von benutzerdefinierten Fehlern.
     throws: 	Ermöglicht das Weitergeben von Ausnahmen von einer Methode.
+
 +---------------------------------------------------------------+
 Java Global exception handler - Ein globaler Ausnahmebehandler in Java wird mit Thread.setDefaultUncaughtExceptionHandler() gesetzt und fängt alle nicht behandelten Ausnahmen (Uncaught Exceptions) ab.
 In einer Standalon Applikation in Java, soll ich mitbekommen, das der Speicher ausgegangen ist.
 (Dies soll in Logging mit aufgenommen werden)
-
-
 
 +---------------------------------------------------------------+
 #TREE SPRING
@@ -787,12 +764,13 @@ Ein Index in einer Datenbank optimiert die Leseoperationen (Abfragen), indem er 
 
     Optimierung für Lesen: Indizes beschleunigen Suchvorgänge, Filter und Sortierungen, da sie die Daten in einer strukturierten Reihenfolge speichern.
     Auswirkung auf Schreiben: Indizes verlangsamen Schreiboperationen (INSERT, UPDATE, DELETE), weil die Indizes bei jeder Änderung aktualisiert werden müssen.
+
 +---------------------------------------------------------------+
 #Liskovsches Substitutionsprinzip - besagt, dass Objekte einer abgeleiteten Klasse in allen Kontexten, in denen Objekte der Basisklasse verwendet werden, ohne Veränderung des Verhaltens eingesetzt werden können.
 
 
-
-#Schichten in DB implementierung mit Framework - JAVA Spring 
++---------------------------------------------------------------+
+#  Schichten in DB implementierung mit Framework - JAVA Spring  # 
 +---------------------------------------------------------------+
 |                    Anwendungsschicht                          |
 |                 (Spring Data JPA, JPA API)                    |
@@ -829,8 +807,6 @@ Ein Index in einer Datenbank optimiert die Leseoperationen (Abfragen), indem er 
 |      - JVM: Java Virtual Machine, führt den Bytecode aus und  |
 |        ermöglicht die Ausführung von Java-Anwendungen auf     |
 |        verschiedenen Plattformen.                             |
-
-
 +---------------------------------------------------------------+
 #DB
 
@@ -845,14 +821,14 @@ Das Entity-Relationship-Modell (ER-Modell) dient zur Planung von Datenbanken.
   [1:n]  A → B  (Museum – Kunstwerke)
   [m:n]  A ⇄ B  (Student – Professor, via Verbindungstabelle)
 
-+---------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
 #Pattern from C
 
 * Abstrakte Innere Klasse → Für Vererbung & Struktur.
 * Callback (Interface) → Für Event-Handling & Async.
 * Delegate (Funktionales Interface) → Für Methodenübergabe.
 
-+---------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
 #JDBC Driver Typen
 
 [Typ 1] JDBC-ODBC Bridge:
@@ -867,7 +843,7 @@ Das Entity-Relationship-Modell (ER-Modell) dient zur Planung von Datenbanken.
 [Typ 4] Datenbankprotokoll-Treiber:
   - Direkte DB-Kommunikation, schnell, plattformunabhängig.
 
-+---------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
 #Java RMI
 
 Remote Method Invocation (RMI) erlaubt Java-Objekten, Methoden über ein Netzwerk
@@ -881,14 +857,14 @@ Warum?
 Ermöglicht verteilte Anwendungen, bei denen Client & Server auf verschiedenen
 Maschinen laufen, aber reibungslos interagieren.
 
-+---------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
 #Thread in Java
 
 Ein Thread ist ein separater Ablauf, der parallel zu anderen Code-Teilen läuft.  
 Start mit `.start()`.  
 Macht Programme schneller, aber Vorsicht bei gemeinsamem Datenzugriff!
 
-+---------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
 #Kaskadierung
 
 Verkettung von Elementen: Die Ausgabe eines wird zur Eingabe des nächsten.  
@@ -897,7 +873,7 @@ Anwendungen:
    - Management 
    - Informationstechnik   
 
-+---------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
 #Swing
 
 Java-Bibliothek für GUIs.  
@@ -905,9 +881,9 @@ Basiert auf AWT, erweitert mit flexiblen Komponenten:
    - `JButton`  
    - `JFrame`  
    - `JPanel`  
-Plattformunabhängig & modern!  
-+---------------------------------------------------------------+
-
+Plattformunabhängig & modern! 
+ 
++------------------------------------------------------------------------------------------------------------------------------+
 #Salting 
 
 Salting fuegt einem Passwort vor dem Hashen einen zufaelligen Wert hinzu, 
@@ -915,8 +891,7 @@ um es gegen Angriffe wie Rainbow Tables zu schuetzen. Dadurch entstehen
 einzigartige Hashes, selbst bei identischen Passwoertern. Das Salt wird 
 mit dem Hash gespeichert, um die Verifizierung zu ermoeglichen.
 
-+---------------------------------------------------------------+
-
++------------------------------------------------------------------------------------------------------------------------------+
 ProcessBuilder & ProcessObject – H2-Server starten
     Tech: Verwendet ProcessBuilder, um externe Prozesse zu starten. Ermöglicht die flexible Übergabe von Parametern, das Umleiten von Ein- und Ausgabeströmen sowie die Steuerung des gestarteten Prozesses.
     Beschreibung: Startet den H2-Datenbankserver als separaten Prozess mit den erforderlichen Argumenten (-tcp, -tcpAllowOthers, -tcpPort 9092). 
@@ -927,10 +902,8 @@ Apache Commons Exec – Externe Programme starten (z. B. PDF-Reader)
     Beschreibung: Startet eine externe Anwendung, z. B. einen PDF-Reader, mit einer angegebenen Datei. Unter Windows wird start verwendet, unter Linux xdg-open. 
     Optional kann ein bestimmtes Programm (z. B. SumatraPDF.exe) definiert werden, um gezielt bestimmte Anwendungen zu nutzen.
 
-+---------------------------------------------------------------+
-
-
-OSI-7-Schichten-Modell - Für jede schicht gibt es eigene protokolle:
++------------------------------------------------------------------------------------------------------------------------------+
+#OSI-7-Schichten-Modell - Für jede schicht gibt es eigene protokolle:
 ┌────────────────────────┐  
 │    HTTP, FTP, SMTP     │  7. Anwendungsschicht (Application)
 ├────────────────────────┤   
@@ -947,7 +920,139 @@ OSI-7-Schichten-Modell - Für jede schicht gibt es eigene protokolle:
 │  Kabel, WLAN, Glasfaser│  1. Bitübertragungsschicht (Physical)  
 └────────────────────────┘  
 
++------------------------------------------------------------------------------------------------------------------------------+
+#SOAP Webservice:
+(Simple Object Access Protocol) ist ein XML-basiertes Protokoll für den Nachrichtenaustausch zwischen Anwendungen über HTTP, SMTP oder andere Transportprotokolle. 
+Es verwendet eine definierte Struktur (WSDL – Web Services Description Language) zur Beschreibung der verfügbaren Operationen und deren Datenformate. 
+SOAP bietet starke Sicherheitsmechanismen (WS-Security), Transaktionsunterstützung und ist für komplexe, unternehmensweite Anwendungen geeignet.
 
-+---------------------------------------------------------------+
+#REST Webservice:
+(Representational State Transfer) ist ein architektonischer Stil für Webservices, der auf den Standard-HTTP-Methoden (GET, POST, PUT, DELETE) basiert. 
+REST nutzt Ressourcen, die über eindeutige URLs (URIs) identifizierbar sind, und überträgt Daten meist in JSON oder XML. 
+REST ist leichtgewichtig, skalierbar, einfacher zu implementieren und ideal für moderne Web- und Cloud-Anwendungen.
+
++------------------------------------------------------------------------------------------------------------------------------+
+#WSDL (Web Services Description Language) ist ein XML-basiertes Format, das beschreibt, wie ein SOAP-Webservice funktioniert. 
+Es ist wie ein Vertrag zwischen dem Webservice und dem Client. 
+
+WSDL definiert:
+    Operationen: Welche Funktionen der Webservice anbietet.
+    Nachrichten: Die Datenformate (z.B. XML), die für Anfragen und Antworten verwendet werden.
+    Protokolle: Wie die Kommunikation erfolgt (meistens HTTP/SOAP).
+    Endpunkte: Die URL, über die der Webservice erreichbar ist.
+
+Kurz gesagt: WSDL erklärt, wie der Client mit dem Webservice kommunizieren kann und welche Daten dafür erforderlich sind.
+
++------------------------------------------------------------------------------------------------------------------------------+
+DOM:
+DOM (Document Object Model) ist eine Programmierschnittstelle, die XML-Daten als strukturierte Baumhierarchie im Speicher darstellt, was den Zugriff und die Manipulation von beliebigen Teilen des Dokuments ermöglicht. 
+Es verbraucht jedoch viel RAM, besonders bei großen XML-Daten.
+
+#SAX:
+SAX (Simple API for XML) ist ein ereignisgesteuerter XML-Parser, der XML-Daten sequenziell liest und beim Auftreten von Tags Ereignisse auslöst. 
+Es ist speichereffizient, da es nur einen kleinen Teil der Daten im Speicher hält, aber bietet keinen zufälligen Zugriff auf das Dokument. Ideal für große Datenmengen.
+
++------------------------------------------------------------------------------------------------------------------------------+
+#JSP (JavaServer Pages):
+-----------------------
+- HTML-Seiten mit eingebettetem Java-Code.
+- Wird zur Darstellung von Inhalten verwendet.
+- Vom Server zu Servlets kompiliert.
+- Beispiel: Ausgabe von Benutzerdaten in HTML.
++------------------------------------------------------------------------------------------------------------------------------+
+#Servlets:
+---------
+- Java-Klassen, die HTTP-Anfragen verarbeiten.
+- Steuern den Ablauf der Anwendung (Controller).
+- Können Daten verarbeiten, an JSPs weitergeben, etc.
+- Beispiel: LoginServlet verarbeitet Benutzereingaben.
++------------------------------------------------------------------------------------------------------------------------------+
+FORWARD vs. REDIRECT
+====================
+
+#FORWARD (serverseitig):
+-----------------------
+- Request bleibt intern auf dem Server.
+- URL im Browser ändert sich nicht.
+- Daten im Request-Objekt bleiben erhalten.
+- Schneller, weil kein neuer HTTP-Request erzeugt wird.
+- Beispiel:
+    request.getRequestDispatcher("seite.jsp")
+           .forward(request, response);
+
+#REDIRECT (clientseitig):
+------------------------
+- Server sendet HTTP-Statuscode 302 mit neuer URL.
+- Browser führt eine neue Anfrage an die Ziel-URL aus.
+- URL im Browser ändert sich.
+- Request-Daten gehen verloren (es sei denn über Session/Parameter).
+- Beispiel:
+    response.sendRedirect("seite.jsp");
++------------------------------------------------------------------------------------------------------------------------------+
+
+#NICHT-FUNKTIONALE ANFORDERUNGEN
+===============================
+- Bestimmen das "Wie" eines Systems.
+- Beeinflussen Architektur, Sicherheit und Performance.
+
+Nicht-funktionale Anforderungen sind entscheidend für die Wahl von Technologien,
+Architekturmuster (z. B. MVC), Infrastruktur (z. B. Cluster), und Systemdesign.
++------------------------------------------------------------------------------------------------------------------------------+
+#Projektanforderung:
+Die Einführung der Software erfordert notwendige organisatorische Änderungen, die sich auf folgende Bereiche erstrecken:
+
+    Datenbank (DB): Anpassungen und Integration einer geeigneten Datenbanklösung zur Unterstützung der Anwendung.
+    Architektur: Entwicklung einer skalierbaren und flexiblen Systemarchitektur, die die Anforderungen des Projekts erfüllt.
+    Spring: Nutzung des Spring Frameworks, insbesondere Spring Data, zur effizienten Entwicklung des Backends und der Datenbankintegration.
+    LLM (Large Language Model): Implementierung von Funktionen, die auf einem Large Language Model basieren, um erweiterte Funktionen wie natürliche Sprachverarbeitung zu integrieren.
+    CRUD: Implementierung von grundlegenden CRUD-Operationen (Create, Read, Update, Delete) zur Verwaltung von Daten.
+    REST: Entwicklung einer RESTful API, um eine einfache und flexible Kommunikation zwischen Frontend und Backend zu ermöglichen.
 
 
++------------------------------------------------------------------------------------------------------------------------------+
+
+
+#AJAX = Asynchronous JavaScript and XML - Ziel ist dabei, Webseite dynamisch aktualisieren (z. B. Suchvorschläge, Chats, Formulare)
+
+    Asynchron: Daten vom Server abrufen, ohne die Seite neu zu laden
+    JavaScript: Steuert die Anfrage im Hintergrund (z. B. mit fetch)
+    XML: Früher genutzt, heute meist JSON
+
++------------------------------------------------------------------------------------------------------------------------------+
+#ACID 
+A – Atomicity (Atomarität):Alles oder nichts – eine Transaktion wird vollständig durchgeführt oder gar nicht.
+C – Consistency (Konsistenz):Die Datenbank bleibt vor und nach der Transaktion in einem gültigen Zustand.
+I – Isolation:Gleichzeitige Transaktionen beeinflussen sich nicht gegenseitig.
+D – Durability (Dauerhaftigkeit):Einmal bestätigte Änderungen bleiben dauerhaft gespeichert – auch bei Systemausfall.
+
++------------------------------------------------------------------------------------------------------------------------------+
+#Referenzielle Integrität bedeutet:
+Fremdschlüssel müssen auf existierende Primärschlüssel verweisen – sonst ist die Beziehung ungültig.
+Sichert konsistente Verknüpfungen zwischen Tabellen (z. B. Bestellungen zu Kunden).
+
++---------------------------------------------------------------
+#NORMALFORMEN DB
+1NF: In jeder Zelle steht nur ein einzelner Wert (keine Listen oder mehrere Infos in einem Feld).
+2NF: Jede Info in der Tabelle gehört wirklich zum ganzen Schlüssel (gilt nur, wenn der Schlüssel aus mehreren Spalten besteht).
+3NF: Die Infos hängen nur vom Schlüssel ab – nicht voneinander.
+
++------------------------------------------------------------------------------------------------------------------------------+
+#BEZIEHUNGEN
+1:1 (Eins zu Eins):
+Ein Eintrag auf der einen Seite passt genau zu einem auf der anderen.
+→ Beispiel: Jeder Mensch hat genau einen Personalausweis.
+
+1:N (Eins zu Viele):
+Ein Eintrag auf der einen Seite passt zu mehreren auf der anderen.
+→ Beispiel: Ein Kunde kann viele Bestellungen haben.
+
+N:1 (Viele zu Eins):
+Viele Einträge auf der einen Seite gehören zu einem einzigen auf der anderen.
+→ Beispiel: Viele Bestellungen gehören zu einem Kunden. (Ist wie 1:N – nur umgedreht gedacht)
+
+N:N (Viele zu Viele):
+Mehrere Einträge auf beiden Seiten können zusammengehören.
+→ Beispiel: Viele Schüler besuchen viele Kurse.
+→ Braucht meist eine Zwischentabelle.
+
++------------------------------------------------------------------------------------------------------------------------------+
