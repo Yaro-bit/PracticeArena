@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author yaros
+ *
+ */
+module ChatClient {
+}
