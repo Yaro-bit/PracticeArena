@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module ImporterCsv {
-	requires itext;
-}
