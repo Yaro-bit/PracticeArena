@@ -1,0 +1,112 @@
+<!-- src/main/resources/static/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login – Terminal</title>
+	<style>
+		:root {
+			--bg: #1e1f29;
+			--panel: #2e2f3e;
+			--text: #e5e9f0;
+			--accent: #88c0d0;
+			--error: #bf616a;
+			--input-bg: #3b3c4a;
+		}
+
+		body {
+			margin: 0;
+			font-family: "Fira Code", monospace;
+			background-color: var(--bg);
+			color: var(--text);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+
+		.login-container {
+			background-color: var(--panel);
+			padding: 2rem 2.5rem;
+			border-radius: 12px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+			min-width: 320px;
+			max-width: 400px;
+			width: 100%;
+		}
+
+		h2 {
+			text-align: center;
+			color: var(--accent);
+			font-size: 1.5rem;
+			margin-bottom: 2rem;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 0.5rem;
+			color: var(--accent);
+			font-size: 0.95rem;
+		}
+
+		input[type="email"],
+		input[type="password"] {
+			width: 100%;
+			padding: 0.65rem 0.75rem;
+			margin-bottom: 1.2rem;
+			border: none;
+			border-radius: 6px;
+			background-color: var(--input-bg);
+			color: var(--text);
+			font-size: 1rem;
+		}
+
+		button {
+			width: 100%;
+			padding: 0.65rem;
+			background-color: var(--accent);
+			border: none;
+			border-radius: 6px;
+			color: #2e3440;
+			font-weight: bold;
+			font-size: 1rem;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		button:hover {
+			background-color: #81a1c1;
+		}
+
+		#error-message {
+			margin-top: 1rem;
+			color: var(--error);
+			text-align: center;
+			font-size: 0.9rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="login-container">
+		<h2>🔐 User Dummy Login</h2>
+		<form action="/login" method="post">
+			<label for="email">📧 Email</label>
+			<input type="email" id="email" name="email" required style="padding: 0.45rem 0.6rem; font-size: 0.95rem;">
+
+			<label for="password">🔑 Password</label>
+			<input type="password" id="password" name="password" required
+				style="padding: 0.45rem 0.6rem; font-size: 0.95rem;">
+
+			<button type="submit" style="padding: 0.45rem; font-size: 0.95rem;">Login</button>
+		</form>
+
+		<div id="error-message" th:if="${error}">
+			<p th:text="${error}"></p>
+		</div>
+	</div>
+</body>
+
+</html>
